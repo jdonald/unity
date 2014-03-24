@@ -19,6 +19,7 @@ Thumbs.db
 *.swp
 *.Trashes
 ExportedObj/
+Temp/
 
 *~
 
