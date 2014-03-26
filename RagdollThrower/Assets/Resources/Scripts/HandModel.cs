@@ -4,12 +4,12 @@ using Leap;
 
 public class HandModel : MonoBehaviour {
 
-  Controller leap_controller_;
-  public int hand_index = 0;
+  public int handIndex = 0;
 
   const float THUMB_TRIGGER_DISTANCE = 0.7f;
   const float PINCH_DISTANCE = 2.0f;
 
+  private Controller leap_controller_;
   private bool pinching_;
   private Collider grabbed_;
 
@@ -50,20 +50,20 @@ public class HandModel : MonoBehaviour {
 
   void UpdatePinch(Frame frame) {
     bool trigger_pinch = false;
-    Vector3 thumb_tip = frame.Hands[hand_index].Fingers[0].JointPosition(Finger.FingerJoint.JOINT_TIP).ToUnityScaled();
+    Vector3 thumb_tip = frame.Hands[handIndex].Fingers[0].JointPosition(Finger.FingerJoint.JOINT_TIP).ToUnityScaled();
 
     // Check thumb tip distance to joints on all other fingers.
     // If it's close enough, start pinching.
     for (int i = 1; i < 5 && !trigger_pinch; ++i) {
       for (int j = 0; j < 4 && !trigger_pinch; ++j) {
-        Vector3 difference = frame.Hands[hand_index].Fingers[i].JointPosition((Finger.FingerJoint)(j)).ToUnityScaled() -
+        Vector3 difference = frame.Hands[handIndex].Fingers[i].JointPosition((Finger.FingerJoint)(j)).ToUnityScaled() -
           thumb_tip;
         if (difference.magnitude < THUMB_TRIGGER_DISTANCE)
           trigger_pinch = true;
       }
     }
 
-    Vector3 pinch_position = transform.TransformPoint(frame.Hands[hand_index].Fingers[0].TipPosition.ToUnityScaled());
+    Vector3 pinch_position = transform.TransformPoint(frame.Hands[handIndex].Fingers[0].TipPosition.ToUnityScaled());
 
     // Only change state if it's different.
     if (trigger_pinch && !pinching_)
@@ -81,20 +81,20 @@ public class HandModel : MonoBehaviour {
 	void Update () {
   	Frame frame = leap_controller_.Frame();
 
-    if (frame.Hands.Count > hand_index) {
+    if (frame.Hands.Count > handIndex) {
       // Make sure we're showing the hand.
       Renderer[] renderers = gameObject.GetComponentsInChildren<Renderer>(true);
       for (int i = 0; i < renderers.Length; ++i)
         renderers[i].active = true;
 
       // Update all the fingers.
-			transform.Find("thumb").GetComponent<FingerModel>().UpdateFinger(frame.Hands[hand_index].Fingers[0]);
-			transform.Find("index").GetComponent<FingerModel>().UpdateFinger(frame.Hands[hand_index].Fingers[1]);
-			transform.Find("middle").GetComponent<FingerModel>().UpdateFinger(frame.Hands[hand_index].Fingers[2]);
-			transform.Find("ring").GetComponent<FingerModel>().UpdateFinger(frame.Hands[hand_index].Fingers[3]);
-			transform.Find("pinky").GetComponent<FingerModel>().UpdateFinger(frame.Hands[hand_index].Fingers[4]);
-      transform.Find("palm").transform.localPosition = frame.Hands[hand_index].PalmPosition.ToUnityScaled();
-      transform.Find("palm").transform.forward = transform.root.rotation * frame.Hands[hand_index].PalmNormal.ToUnityScaled();
+			transform.Find("thumb").GetComponent<FingerModel>().UpdateFinger(frame.Hands[handIndex].Fingers[0]);
+			transform.Find("index").GetComponent<FingerModel>().UpdateFinger(frame.Hands[handIndex].Fingers[1]);
+			transform.Find("middle").GetComponent<FingerModel>().UpdateFinger(frame.Hands[handIndex].Fingers[2]);
+			transform.Find("ring").GetComponent<FingerModel>().UpdateFinger(frame.Hands[handIndex].Fingers[3]);
+			transform.Find("pinky").GetComponent<FingerModel>().UpdateFinger(frame.Hands[handIndex].Fingers[4]);
+      transform.Find("palm").transform.localPosition = frame.Hands[handIndex].PalmPosition.ToUnityScaled();
+      transform.Find("palm").transform.forward = transform.root.rotation * frame.Hands[handIndex].PalmNormal.ToUnityScaled();
 
       // Update pinch status and object we are pinching.
       UpdatePinch(frame);

@@ -3,19 +3,13 @@ using System.Collections;
 
 public class FoodScore : MonoBehaviour {
 
-  private bool eaten_ = false;
+  private bool eaten = false;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
 	void Update () {
     if (transform.position.z > GameObject.Find("Mouth").transform.position.z) {
-      if (!eaten_)
+      if (!eaten)
         GameObject.Find("/Robot").GetComponent<Robot>().Eat();
-      eaten_ = true;
+      eaten = true;
     }
 	}
 }

@@ -4,9 +4,6 @@ using Leap;
 
 public class FingerModel : MonoBehaviour {
 
-	void Start () {
-	}
-	
 	public void UpdateFinger (Finger finger) {
     Vector3[] digit_positions = new Vector3[3];
     Vector3[] digit_directions = new Vector3[3];
