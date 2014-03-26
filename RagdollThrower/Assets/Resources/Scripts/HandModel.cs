@@ -74,7 +74,7 @@ public class HandModel : MonoBehaviour {
     // Accelerate what we are grabbing toward the pinch.
     if (grabbed_ != null) {
       Vector3 distance = pinch_position - grabbed_.transform.position;
-      grabbed_.rigidbody.velocity = 0.95f * grabbed_.rigidbody.velocity + 6.0f * distance;
+      grabbed_.rigidbody.velocity = 0.95f * grabbed_.rigidbody.velocity + 15.0f * distance;
     }
   }
 	

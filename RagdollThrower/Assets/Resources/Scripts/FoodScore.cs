@@ -14,7 +14,7 @@ public class FoodScore : MonoBehaviour {
 	void Update () {
     if (transform.position.z > GameObject.Find("Mouth").transform.position.z) {
       if (!eaten_)
-        GameObject.Find("/Head").GetComponent<RobotEyes>().Eat();
+        GameObject.Find("/Robot").GetComponent<Robot>().Eat();
       eaten_ = true;
     }
 	}
