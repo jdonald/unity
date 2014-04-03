@@ -8,15 +8,19 @@ public class Pincher : MonoBehaviour {
 
   const float THUMB_TRIGGER_DISTANCE = 0.7f;
   const float PINCH_DISTANCE = 2.0f;
+  const int HAND_LAYER_INDEX = 11;
 
   private Controller leap_controller_;
   private bool pinching_;
   private Collider grabbed_;
+  private int layer_mask_;
 
   void Start () {
     leap_controller_ = new Controller();
     pinching_ = false;
     grabbed_ = null;
+    layer_mask_ = 1 << HAND_LAYER_INDEX;
+    layer_mask_ = ~layer_mask_;
   }
 
   void OnPinch(Vector3 pinch_position) {
@@ -31,7 +35,7 @@ public class Pincher : MonoBehaviour {
     }
 
     // Check if we pinched a movable object and grab the closest one.
-    Collider[] close_things = Physics.OverlapSphere(pinch_position, PINCH_DISTANCE);
+    Collider[] close_things = Physics.OverlapSphere(pinch_position, PINCH_DISTANCE, layer_mask_);
     Vector3 distance = new Vector3(PINCH_DISTANCE, 0.0f, 0.0f);
     for (int j = 0; j < close_things.Length; ++j) {
       Vector3 new_distance = pinch_position - close_things[j].transform.position;
@@ -74,7 +78,7 @@ public class Pincher : MonoBehaviour {
     // Accelerate what we are grabbing toward the pinch.
     if (grabbed_ != null) {
       Vector3 distance = pinch_position - grabbed_.transform.position;
-      grabbed_.rigidbody.velocity = 0.95f * grabbed_.rigidbody.velocity + 15.0f * distance;
+      grabbed_.rigidbody.velocity = 0.95f * grabbed_.rigidbody.velocity + 8.0f * distance;
     }
   }
 
