@@ -138,7 +138,7 @@ public class RiggedHand : MonoBehaviour {
 
         if (j < bones.Length) {
           Vector3 langePos = (pos + nextPos) * 0.5f;
-          bones[j].transform.position = langePos;
+          bones[j].rigidbody.velocity = transform.TransformPoint(langePos - bones[j].transform.localPosition) / Time.fixedDeltaTime;
           bones[j].transform.up = (nextPos - pos);
           Vector3 newScale = bones[j].transform.localScale;
           newScale.y = Mathf.Max(0.0f, (nextPos - pos).magnitude - 0.003f);

@@ -4,13 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Leap;
 
-public class LeapHandController : MonoBehaviour {
+public class RiggedLeap : MonoBehaviour {
 
-  [SerializeField]
-  Transform m_parent;
-
-  [SerializeField]
-  Vector3 m_offset;
+  public Transform m_parent = null;
+  public Vector3 m_offset = new Vector3(0, 0, 0);
 
   Controller m_leapController;
 

@@ -1,8 +1,18 @@
-﻿using UnityEngine;
+﻿/******************************************************************************\
+* Copyright (C) Leap Motion, Inc. 2011-2014.                                   *
+* Leap Motion proprietary and  confidential.  Not for distribution.            *
+* Use subject to the terms of the Leap Motion SDK Agreement available at       *
+* https://developer.leapmotion.com/sdk_agreement, or another agreement between *
+* Leap Motion and you, your company or other organization.                     *
+* Author: Matt Tytel
+\******************************************************************************/
+
+using UnityEngine;
 using System.Collections;
 using Leap;
 
-public class GeometricFinger : MonoBehaviour {
+// The finger model for our geometric hand made out of various polyhedra.
+public class GeoFinger : MonoBehaviour {
 
   const int NUM_BONES = 3;
   public GameObject[] bones = new GameObject[NUM_BONES];
@@ -26,8 +36,8 @@ public class GeometricFinger : MonoBehaviour {
 
   // Returns the direction the given bone is facing on the finger.
   private Vector3 GetBoneDirection(Finger finger, int bone) {
-    Vector3 direction = finger.JointPosition((Finger.FingerJoint)(bone + 1)).ToUnity() -
-                        finger.JointPosition((Finger.FingerJoint)(bone)).ToUnity();
+    Vector3 direction = Vector3.Scale(transform.localScale, transform.rotation * (finger.JointPosition((Finger.FingerJoint)(bone + 1)).ToUnity() -
+                                                                                  finger.JointPosition((Finger.FingerJoint)(bone)).ToUnity()));
     direction.Normalize();
     return direction;
   }
@@ -55,7 +65,7 @@ public class GeometricFinger : MonoBehaviour {
     for (int i = 0; i < NUM_BONES; ++i) {
       // Set velocity.
       Vector3 current_bone_position = bones[i].transform.localPosition;
-      bones[i].rigidbody.velocity = easing_ * (GetBonePosition(finger, i) - current_bone_position) / Time.fixedDeltaTime;
+      bones[i].rigidbody.velocity = transform.TransformPoint(easing_ * (GetBonePosition(finger, i) - current_bone_position) / Time.fixedDeltaTime);
 
       // Set angular velocity.
       Vector3 bone_direction = GetBoneDirection(finger, i);
