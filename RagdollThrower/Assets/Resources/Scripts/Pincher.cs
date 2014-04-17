@@ -4,22 +4,18 @@ using Leap;
 
 public class Pincher : MonoBehaviour {
 
-  public int handIndex = 0;
-
   const int NUM_FINGERS = 5;
   const int NUM_JOINTS = 4;
   const int HAND_LAYER_INDEX = 11;
   const float PINCH_DISTANCE = 2.0f;
   const float SPRING_CONSTANT = 3000.0f;
-  const float THUMB_TRIGGER_DISTANCE = 0.7f;
+  const float THUMB_TRIGGER_DISTANCE = 0.035f;
 
-  private Controller leap_controller_;
   private bool pinching_;
   private Collider grabbed_;
   private int layer_mask_;
 
   void Start () {
-    leap_controller_ = new Controller();
     pinching_ = false;
     grabbed_ = null;
     layer_mask_ = 1 << HAND_LAYER_INDEX;
@@ -55,9 +51,9 @@ public class Pincher : MonoBehaviour {
     pinching_ = false;
   }
 
-  void UpdatePinch(Frame frame) {
+  void Update() {
     bool trigger_pinch = false;
-    Hand hand = frame.Hands[handIndex];
+    Hand hand = GetComponent<HandModel>().GetLeapHand();
 
     // Thumb tip is the pinch position.
     Vector3 thumb_tip = hand.Fingers[0].TipPosition.ToUnityScaled();
@@ -88,14 +84,5 @@ public class Pincher : MonoBehaviour {
       Vector3 distance = pinch_position - grabbed_.transform.position;
       grabbed_.rigidbody.AddForce(SPRING_CONSTANT * distance);
     }
-  }
-
-  void Update () {
-    Frame frame = leap_controller_.Frame();
-
-    if (frame.Hands.Count > handIndex)
-      UpdatePinch(frame);
-    else if (pinching_)
-      OnRelease();
   }
 }
