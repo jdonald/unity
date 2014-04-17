@@ -6,9 +6,12 @@ public class Pincher : MonoBehaviour {
 
   public int handIndex = 0;
 
-  const float THUMB_TRIGGER_DISTANCE = 0.7f;
-  const float PINCH_DISTANCE = 2.0f;
+  const int NUM_FINGERS = 5;
+  const int NUM_JOINTS = 4;
   const int HAND_LAYER_INDEX = 11;
+  const float PINCH_DISTANCE = 2.0f;
+  const float SPRING_CONSTANT = 3000.0f;
+  const float THUMB_TRIGGER_DISTANCE = 0.7f;
 
   private Controller leap_controller_;
   private bool pinching_;
@@ -54,20 +57,25 @@ public class Pincher : MonoBehaviour {
 
   void UpdatePinch(Frame frame) {
     bool trigger_pinch = false;
-    Vector3 thumb_tip = frame.Hands[handIndex].Fingers[0].JointPosition(Finger.FingerJoint.JOINT_TIP).ToUnityScaled();
+    Hand hand = frame.Hands[handIndex];
+
+    // Thumb tip is the pinch position.
+    Vector3 thumb_tip = hand.Fingers[0].TipPosition.ToUnityScaled();
 
     // Check thumb tip distance to joints on all other fingers.
     // If it's close enough, start pinching.
-    for (int i = 1; i < 5 && !trigger_pinch; ++i) {
-      for (int j = 0; j < 4 && !trigger_pinch; ++j) {
-        Vector3 difference = frame.Hands[handIndex].Fingers[i].JointPosition((Finger.FingerJoint)(j)).ToUnityScaled() -
-          thumb_tip;
-        if (difference.magnitude < THUMB_TRIGGER_DISTANCE)
+    for (int i = 1; i < NUM_FINGERS && !trigger_pinch; ++i) {
+      Finger finger = hand.Fingers[i];
+
+      for (int j = 0; j < NUM_JOINTS && !trigger_pinch; ++j) {
+        Vector3 joint_position = finger.JointPosition((Finger.FingerJoint)(j)).ToUnityScaled();
+        Vector3 distance = thumb_tip - joint_position;
+        if (distance.magnitude < THUMB_TRIGGER_DISTANCE)
           trigger_pinch = true;
       }
     }
 
-    Vector3 pinch_position = transform.TransformPoint(frame.Hands[handIndex].Fingers[0].TipPosition.ToUnityScaled());
+    Vector3 pinch_position = transform.TransformPoint(thumb_tip);
 
     // Only change state if it's different.
     if (trigger_pinch && !pinching_)
@@ -78,7 +86,7 @@ public class Pincher : MonoBehaviour {
     // Accelerate what we are grabbing toward the pinch.
     if (grabbed_ != null) {
       Vector3 distance = pinch_position - grabbed_.transform.position;
-      grabbed_.rigidbody.velocity = 0.95f * grabbed_.rigidbody.velocity + 8.0f * distance;
+      grabbed_.rigidbody.AddForce(SPRING_CONSTANT * distance);
     }
   }
 
