@@ -1,20 +1,22 @@
 Leap Motion Unity Examples
 =====
 
-The following repository contains Leap Motion SDK examples built with Unity. Each example is built using V2 Core Services code from [Leap Motion's Developer Portal](https://developer.leapmotion.com). 
+The following repository contains Leap Motion SDK examples built with Unity. Each project is built using V2 Core Services Skeletal Tracking code from [Leap Motion's Developer Portal](https://developer.leapmotion.com). 
 
-##Project descriptions
+##Project Descriptions
 
 ###BlockDestruction1
+<img src="https://leapmotion-leapdev-production.s3.amazonaws.com/uploads/library/detail_image/6420b157-5c33-469e-9697-360196775b33.gif">
 Prevent the blocks from hitting the camera by swatting the blocks away with your hand.
 
 ###BlockDestruction2
 Push, flick, wave around the green blocks to hit the white blocks, close your fist to bring back the green blocks to its initial stage.
 
 ###BlockPit
-<Description coming soon>
+Description coming soon...
 
 ###Leap3DObjectBrowser
+Description coming soon...
 
 ###LeapRiggedHand
 Rigged hand package. Get a rigged mesh driven by the skeletal API into your unity project.
@@ -42,13 +44,13 @@ Wave you hand to start this simple pendulum physics demo.
 You can also change the camera angle of the pendulum by moving around your mouse.  
 
 ###PinchSelector
-palm position to hover over an item, pinch from thumb to index finger to select.
+Palm position to hover over an item, pinch from thumb to index finger to select.
 
 ###RagdollThrower
-<Description coming soon>
+Description coming soon...
 
 ###Robits
-<Description coming soon>
+Description coming soon...
 
 ###RopeTest
 This project is an experiment in 3D interaction with a rigged hand in Unity. Poke at the handing sign to move it.
