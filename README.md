@@ -10,10 +10,14 @@ The following repository contains Leap Motion SDK examples built with Unity. Eac
 
 Prevent the blocks from hitting the camera by swatting the blocks away with your hand.
 
+---
+
 ###BlockDestruction2
+<img src="https://leapmotion-leapdev-production.s3.amazonaws.com/uploads/library/thumbnail_image/44374ce9-e61e-4cac-a027-bcc841e1c3cf.jpg">
+
 Push, flick, wave around the green blocks to hit the white blocks, close your fist to bring back the green blocks to its initial stage.
 
-<img src="https://leapmotion-leapdev-production.s3.amazonaws.com/uploads/library/thumbnail_image/44374ce9-e61e-4cac-a027-bcc841e1c3cf.jpg">
+---
 
 ###BlockPit
 
@@ -67,7 +71,7 @@ Description coming soon...
 Description coming soon...
 
 ###RopeTest
-<img src="https://leapmotion-leapdev-production.s3.amazonaws.com/uploads/library/thumbnail_image/bbe81d1a-4b55-4882-b7f1-a6745495b891.jp">
+<img src="https://leapmotion-leapdev-production.s3.amazonaws.com/uploads/library/thumbnail_image/bbe81d1a-4b55-4882-b7f1-a6745495b891.jpg">
 
 This project is an experiment in 3D interaction with a rigged hand in Unity. Poke at the handing sign to move it.
 
