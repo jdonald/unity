@@ -13,7 +13,12 @@ Prevent the blocks from hitting the camera by swatting the blocks away with your
 ###BlockDestruction2
 Push, flick, wave around the green blocks to hit the white blocks, close your fist to bring back the green blocks to its initial stage.
 
+<img src="https://leapmotion-leapdev-production.s3.amazonaws.com/uploads/library/thumbnail_image/44374ce9-e61e-4cac-a027-bcc841e1c3cf.jpg">
+
 ###BlockPit
+
+<img src="https://leapmotion-leapdev-production.s3.amazonaws.com/uploads/library/thumbnail_image/01029c8b-812e-4c0b-8370-08f1a3a9c1bc.jpg">
+
 Description coming soon...
 
 ###Leap3DObjectBrowser
