@@ -22,9 +22,13 @@ Push, flick, wave around the green blocks to hit the white blocks, close your fi
 Description coming soon...
 
 ###Leap3DObjectBrowser
+<img src="https://leapmotion-leapdev-production.s3.amazonaws.com/uploads/library/thumbnail_image/4dcdf483-c754-480b-83f3-c94e7d9e056f.jpg">
+
 Description coming soon...
 
 ###LeapRiggedHand
+<img src="https://leapmotion-leapdev-production.s3.amazonaws.com/uploads/library/thumbnail_image/a2e7d4bf-b95a-4036-b4b6-d70e208f2b83.png">
+
 Rigged hand package. Get a rigged mesh driven by the skeletal API into your unity project.
 
 You can import the asset by going to Assets -> Import Package -> Custom Package.
@@ -46,6 +50,8 @@ or
 
 
 ###Pendulum
+<img src="https://leapmotion-leapdev-production.s3.amazonaws.com/uploads/library/thumbnail_image/35c24d05-c7cc-4b0f-ad54-accab3d2e710.jpg">
+
 Wave you hand to start this simple pendulum physics demo. 
 You can also change the camera angle of the pendulum by moving around your mouse.  
 
@@ -53,13 +59,19 @@ You can also change the camera angle of the pendulum by moving around your mouse
 Palm position to hover over an item, pinch from thumb to index finger to select.
 
 ###RagdollThrower
+<img src="https://leapmotion-leapdev-production.s3.amazonaws.com/uploads/library/thumbnail_image/51496b87-b9ba-4184-a581-510debcb6ca6.jpg">
+
 Description coming soon...
 
 ###Robits
 Description coming soon...
 
 ###RopeTest
+<img src="https://leapmotion-leapdev-production.s3.amazonaws.com/uploads/library/thumbnail_image/bbe81d1a-4b55-4882-b7f1-a6745495b891.jp">
+
 This project is an experiment in 3D interaction with a rigged hand in Unity. Poke at the handing sign to move it.
 
 ###mirrorTest
+<img src="https://leapmotion-leapdev-production.s3.amazonaws.com/uploads/library/thumbnail_image/79685b84-de98-4ff2-9143-206e72ff9026.jpg">
+
 Mirror test is an experiement developed to test the useability of using a reflective surface along a touch plane to give users a sense of z-depth. 
