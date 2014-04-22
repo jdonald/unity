@@ -52,9 +52,9 @@ Default.unity is a scene that has this basic setup.
 
 To add functionality to hands, either
 
-(1) query for all hands through LeapHandController.GetHandGameObjects()
+(1) Query for all hands through LeapHandController.GetHandGameObjects()
 or
-(2) attach scripts to the UnityHand prefab. See examples of stuff you can attach to hands in Assets/Resources/LeapMotion/Scripts/ExtensionExamples
+(2) Attach scripts to the UnityHand prefab. See examples of stuff you can attach to hands in Assets/Resources/LeapMotion/Scripts/ExtensionExamples
 
 ---
 
