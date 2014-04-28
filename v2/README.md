@@ -1,4 +1,4 @@
-Leap Motion Unity Examples
+<img src="https://lm-assets.s3.amazonaws.com/screenshots/leap_unity.png">
 =====
 
 <img src="https://di4564baj7skl.cloudfront.net/assets/mac-a3b33298ed46dbf8a36151ac0357dbef.png">
