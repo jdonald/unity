@@ -3,6 +3,7 @@
 
 <img src="https://developer.leapmotion.com/documentation/images/Leap_Finger_Model.png">
 
+###V1: Consumer Release
 The following repository contains Leap Motion SDK examples built with Unity. Each project is built using V1 Core Services Tracking code from [Leap Motion's Developer Portal](https://developer.leapmotion.com/downloads). For additional support with these examples and more, feel free to reach out to us via: [Leap Motion's Community Forums](https://community.leapmotion.com/)  
 
 ###Resources & Tips
