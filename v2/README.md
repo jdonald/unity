@@ -6,6 +6,8 @@
 ##V2: Skeletal Beta
 The following repository contains Leap Motion SDK examples built with Unity. Each project is built using V2 Core Services Skeletal Tracking code from [Leap Motion's Developer Portal](https://developer.leapmotion.com/downloads/skeletal-beta). For additional support with these examples and more, feel free to reach out to us via: [Leap Motion's Community Forums](https://community.leapmotion.com/category/beta)  
 
+**NOTE**: The V2 Skeletal Beta code is NOT currently released to production for consumers. 
+
 ##Getting Started
 
 ####1. Clone the GitHub repository and choose a project.
