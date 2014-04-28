@@ -7,5 +7,5 @@ RopeTest
 This project is an experiment in 3D interaction with a rigged hand in Unity. Poke at the handing sign to move it.
 
 ##API Methods
-* [Fingers](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Finger.html)
-* [Hands](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Hand.html)
+* [Fingers](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Finger.html)
+* [Hands](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html)
