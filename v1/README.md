@@ -1,7 +1,7 @@
 <img src="https://lm-assets.s3.amazonaws.com/screenshots/leap_unity.png">
 =====
 
-<img src="https://developer.leapmotion.com/documentation/images/Leap_Finger_Model.png>
+<img src="https://developer.leapmotion.com/documentation/images/Leap_Finger_Model.png">
 
 The following repository contains Leap Motion SDK examples built with Unity. Each project is built using V1 Core Services Tracking code from [Leap Motion's Developer Portal](https://developer.leapmotion.com/downloads). For additional support with these examples and more, feel free to reach out to us via: [Leap Motion's Community Forums](https://community.leapmotion.com/)  
 
