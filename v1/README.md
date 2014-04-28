@@ -1,4 +1,4 @@
-<img src="https://lm-assets.s3.amazonaws.com/screenshots/leap_unity.png">
+<img src="https://lm-assets.s3.amazonaws.com/screenshots/leap_unity_logo.png">
 =====
 
 <img src="https://developer.leapmotion.com/documentation/images/Leap_Finger_Model.png">
