@@ -1,0 +1,2 @@
+You need Unity3D 3.5 Pro or better. You also need to get the appropriate plugins
+for your OS from the Leap Motion SDK and place them in the plugins folder.

@@ -1,0 +1,9 @@
+syntax: glob
+.DS_Store
+*.csproj
+*.sln
+*proj
+*.pidb
+Temp
+Library
+*.userprefs
