@@ -9,7 +9,7 @@ The following repository contains Leap Motion SDK examples built with Unity. Eac
 
 ##Resources
 * Each Unity project example folder has a short README
-* [Leap Motion API Docs (C#)](https://developer.leapmotion.com/documentation)
+* [Leap Motion API Docs (C#)](https://developer.leapmotion.com/documentation/csharp/index.html)
 * [Unity Tutorial Videos](https://unity3d.com/learn/tutorials/modules)
 
 ##Contributing
