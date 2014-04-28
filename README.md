@@ -1,13 +1,13 @@
-Leap Motion Unity Examples
+<img src="https://lm-assets.s3.amazonaws.com/screenshots/leap_unity.png">
 =====
 
-<img src="https://di4564baj7skl.cloudfront.net/assets/mac-a3b33298ed46dbf8a36151ac0357dbef.png">
+The following repository contains Leap Motion SDK examples built with Unity. Each project is built using Core Services Tracking code from [Leap Motion's Developer Portal](https://developer.leapmotion.com/downloads). For additional support with these examples and more, feel free to reach out to us via: [Leap Motion's Community Forums](https://community.leapmotion.com).
 
-The following repository contains Leap Motion SDK examples built with Unity. Each project is built using V2 Core Services Skeletal Tracking code from [Leap Motion's Developer Portal](https://developer.leapmotion.com/downloads/skeletal-beta). For additional support with these examples and more, feel free to reach out to us via: [Leap Motion's Community Forums](https://community.leapmotion.com/category/beta)  
+###Versioning
+* [V1: Consumer Release](https://developer.leapmotion.com/downloads) (see /v1 directory)
+* [V2: Skeletal Beta](https://developer.leapmotion.com/downloads/skeletal-beta) (see /v2 directory)
 
 ###Resources & Tips
-* V2 Skeletal Tracking Beta Access, Email: beta@leapmotion.com
 * Each Unity project example folder has a short README
-* [Leap Motion Getting Started (Unity)](https://developer.leapmotion.com/downloads/skeletal-beta/set_up_new_project#unity)
-* [Leap Motion API Docs (C#)](https://developer.leapmotion.com/documentation/skeletal/csharp/index.html)
+* [Leap Motion API Docs (C#)](https://developer.leapmotion.com/documentation)
 * [Unity Tutorial Videos](https://unity3d.com/learn/tutorials/modules)
