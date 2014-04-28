@@ -35,3 +35,7 @@ Cloth Ripping [[video](http://youtu.be/aJlzhTvmm6Y)]
 
 If you have a device and want to try this out, you can find the binaries for this project [here](https://bitbucket.org/pohung/leapphysicssandbox/downloads).
 
+##API Methods
+* [Hands](https://developer.leapmotion.com/documentation/csharp/api/Leap.Hand.html)
+* [Fingers](https://developer.leapmotion.com/documentation/csharp/api/Leap.Finger.html)
+
