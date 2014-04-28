@@ -7,6 +7,5 @@ PinchSelector
 Palm position to hover over an item, pinch from thumb to index finger to select.
 
 ##API Methods
-* [Pinch Strength](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Hand.html#pinchStrength)
-* [Fingers](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Finger.html)
-
+* [Pinch Strength](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html#pinchStrength)
+* [Fingers](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Finger.html)

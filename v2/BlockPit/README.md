@@ -7,5 +7,5 @@ BlockPit
 Use both hands to scoop up blocks. Then, wiggle your hands to watch the blocks slip through your fingers.
 
 ##API Methods
-* [Finger Joints](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Finger.html#id50)
-* [Hands & Palm Normals](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Hand.html)
+* [Finger Joints](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Finger.html#id50)
+* [Hands & Palm Normals](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html)

@@ -7,5 +7,5 @@ RagdollThrower
 Using your hand, pinch ragdolls and throw them through the monster's mouth. A successful hit will light up the monster's eyes.
 
 ##API Methods
-* [PinchStrength](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Hand.html#pinchStrength)
-* [GrabStrength](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Hand.html#grabStrength)
+* [PinchStrength](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html#pinchStrength)
+* [GrabStrength](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html#grabStrength)

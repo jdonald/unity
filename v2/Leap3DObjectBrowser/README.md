@@ -7,5 +7,4 @@ Leap3DObjectBrowser
 This demo lets you browse objects in 3D space by using two-handed grabbing gestures. Pull and twist your way through space.
 
 ##API Methods
-* [Grab Strength](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Hand.html#grabStrength)
-
+* [Grab Strength](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html#grabStrength)

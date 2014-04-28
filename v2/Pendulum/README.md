@@ -8,5 +8,5 @@ Wave you hand to start this simple pendulum physics demo.
 You can also change the camera angle of the pendulum by moving around your mouse.  
 
 ##API Methods
-* [Finger Joints](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Finger.html#id50)
-* [Hands & Palm Normals](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Hand.html)
+* [Finger Joints](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Finger.html#id50)
+* [Hands & Palm Normals](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html)

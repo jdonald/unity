@@ -6,6 +6,5 @@ BlockDestruction2
 Push, flick, wave around the green blocks to hit the white blocks, close your fist to bring back the green blocks to its initial stage.
 
 ##API Methods
-* [Finger Joints](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Finger.html#id50)
-* [Hands](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Hand.html)
-
+* [Finger Joints](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Finger.html#id50)
+* [Hands](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html)

@@ -25,6 +25,5 @@ or
 (2) Attach scripts to the UnityHand prefab. See examples of stuff you can attach to hands in Assets/Resources/LeapMotion/Scripts/ExtensionExamples
 
 ##API Methods
-* [Hands](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Hand.html)
-* [Fingers](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Finger.html)
-
+* [Hands](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html)
+* [Fingers](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Finger.html)
