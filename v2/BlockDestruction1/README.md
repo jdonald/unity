@@ -7,5 +7,5 @@ BlockDestruction1
 Prevent the blocks from hitting the camera by swatting the blocks away with your hand.
 
 ##API Methods
-* [Finger Joints](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Finger.html#id50)
-* [Hands](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Hand.html)
+* [Finger Joints](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Finger.html#id50)
+* [Hands](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html)
