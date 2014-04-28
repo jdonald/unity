@@ -1,6 +1,8 @@
 Leap Physics Sandbox
 =========
 
+##Description
+
 Here's an example of how you can easily get really cool physical interactions using Unity3D + Leap Motion.
 
 I'm using the Leap hand controller code included with the default UnitySandbox in the SDK with some slight modifications. I also have a bit of code demonstrating basic scene navigation by "panning" the ground.
