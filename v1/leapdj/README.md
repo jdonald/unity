@@ -8,5 +8,5 @@ Leap DJ Demo
 Unity3D demo for physical buttons, sliders, and turntables!
 
 ##API Methods
-* [Hands](https://developer.leapmotion.com/documentation/skeletal/javascript/api/Leap.Hand.html)
+* [Hands](https://developer.leapmotion.com/documentation/csharp/api/Leap.Hand.html)
 
