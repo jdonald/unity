@@ -10,3 +10,9 @@ You can also change the camera angle of the pendulum by moving around your mouse
 ##API Methods
 * [Finger Joints](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Finger.html#id50)
 * [Hands & Palm Normals](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html)
+
+##Version Support
+Unity V4.x only. 
+
+##License
+All example code in this repository is licensed under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html)
