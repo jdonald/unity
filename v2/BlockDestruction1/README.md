@@ -9,3 +9,6 @@ Prevent the blocks from hitting the camera by swatting the blocks away with your
 ##API Methods
 * [Finger Joints](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Finger.html#id50)
 * [Hands](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html)
+* 
+##Version Support
+Unity V4.x only. 
