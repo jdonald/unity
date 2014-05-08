@@ -14,4 +14,4 @@ Palm position to hover over an item, pinch from thumb to index finger to select.
 Unity V4.x only. 
 
 ##License
-All example code in this repository is licensed under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html)
+All example code in this repository is licensed under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html).
