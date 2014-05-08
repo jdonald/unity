@@ -9,3 +9,9 @@ Using your hand, pinch ragdolls and throw them through the monster's mouth. A su
 ##API Methods
 * [PinchStrength](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html#pinchStrength)
 * [GrabStrength](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html#grabStrength)
+
+##Version Support
+Unity V4.x only. 
+
+##License
+All example code in this repository is licensed under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html).
