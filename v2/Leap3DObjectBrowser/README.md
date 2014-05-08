@@ -8,3 +8,6 @@ This demo lets you browse objects in 3D space by using two-handed grabbing gestu
 
 ##API Methods
 * [Grab Strength](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html#grabStrength)
+
+##Version Support
+Unity V4.x only. 
