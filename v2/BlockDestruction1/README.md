@@ -12,3 +12,6 @@ Prevent the blocks from hitting the camera by swatting the blocks away with your
 
 ##Version Support
 Unity V4.x only. 
+
+##License
+All example code in this repository is licensed under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html)
