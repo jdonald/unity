@@ -8,3 +8,6 @@ Push, flick, wave around the green blocks to hit the white blocks, close your fi
 ##API Methods
 * [Finger Joints](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Finger.html#id50)
 * [Hands](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html)
+
+##Version Support
+Unity V4.x only. 
