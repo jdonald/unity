@@ -27,3 +27,6 @@ or
 ##API Methods
 * [Hands](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Hand.html)
 * [Fingers](https://developer.leapmotion.com/documentation/skeletal/csharp/api/Leap.Finger.html)
+
+##Version Support
+Unity V4.x only. 
