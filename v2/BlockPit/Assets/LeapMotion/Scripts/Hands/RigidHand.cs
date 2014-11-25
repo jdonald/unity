@@ -14,7 +14,7 @@ public class RigidHand : SkeletalHand {
   public float easing = 0.5f;
 
   void Start() {
-    palm.rigidbody.maxAngularVelocity = Mathf.Infinity;
+    palm.GetComponent<Rigidbody>().maxAngularVelocity = Mathf.Infinity;
     IgnoreCollisionsWithSelf();
   }
 
@@ -31,7 +31,7 @@ public class RigidHand : SkeletalHand {
     if (palm != null) {
       // Set palm velocity.
       Vector3 target_position = GetPalmCenter();
-      palm.rigidbody.velocity = (target_position - palm.transform.position) *
+      palm.GetComponent<Rigidbody>().velocity = (target_position - palm.transform.position) *
                                 (1 - easing) / Time.fixedDeltaTime;
 
       // Set palm angular velocity.
@@ -47,7 +47,7 @@ public class RigidHand : SkeletalHand {
         axis = -axis;
       }
       if (angle != 0)
-        palm.rigidbody.angularVelocity = (1 - easing) * angle * axis;
+        palm.GetComponent<Rigidbody>().angularVelocity = (1 - easing) * angle * axis;
     }
   }
 }

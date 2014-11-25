@@ -41,7 +41,7 @@ public class HandController : MonoBehaviour {
 
     for (int i = 0; i < colliders.Length; ++i) {
       for (int h = 0; h < hand_colliders.Length; ++h) {
-        if (colliders[i].rigidbody == null)
+        if (colliders[i].GetComponent<Rigidbody>() == null)
           Physics.IgnoreCollision(colliders[i], hand_colliders[h]);
       }
     }
