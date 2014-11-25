@@ -16,10 +16,12 @@ public abstract class FingerModel : MonoBehaviour {
 
   public Finger.FingerType fingerType = Finger.FingerType.TYPE_INDEX;
 
-  private Hand hand_;
-  private Finger finger_;
+  protected Hand hand_;
+  protected Finger finger_;
+  protected Vector3 offset_ = Vector3.zero;
+  protected bool mirror_z_axis_ = false;
 
-  HandController controller_;
+  protected HandController controller_;
 
   public void SetController(HandController controller) {
     controller_ = controller;
@@ -31,7 +33,16 @@ public abstract class FingerModel : MonoBehaviour {
 
   public void SetLeapHand(Hand hand) {
     hand_ = hand;
-    finger_ = hand.Fingers[(int)fingerType];
+    if (hand_ != null)
+      finger_ = hand.Fingers[(int)fingerType];
+  }
+
+  public void SetOffset(Vector3 offset) {
+    offset_ = offset;
+  }
+
+  public void MirrorZAxis(bool mirror = true) {
+    mirror_z_axis_ = mirror;
   }
 
   public Hand GetLeapHand() { return hand_; }
@@ -41,35 +52,51 @@ public abstract class FingerModel : MonoBehaviour {
 
   public abstract void UpdateFinger();
 
-  // Returns the location of the given joint on the finger in relation to the controller.
-  protected Vector3 GetJointPosition(int joint) {
-    Vector3 local_position;
-    if (joint >= NUM_BONES)
-      local_position = finger_.Bone((Bone.BoneType.TYPE_DISTAL)).NextJoint.ToUnityScaled();
-    else
-      local_position = finger_.Bone((Bone.BoneType)(joint)).PrevJoint.ToUnityScaled();
+  // Returns any additional movement the finger needs because of non-relative palm movement.
+  public Vector3 GetOffset() {
+    return offset_;
+  }
 
-    return controller_.transform.TransformPoint(local_position);
+  // Returns the location of the tip of the finger in relation to the controller.
+  public Vector3 GetTipPosition() {
+    Vector3 local_tip =
+        finger_.Bone((Bone.BoneType.TYPE_DISTAL)).NextJoint.ToUnityScaled(mirror_z_axis_);
+    return controller_.transform.TransformPoint(local_tip) + offset_;
+  }
+
+  // Returns the location of the given joint on the finger in relation to the controller.
+  public Vector3 GetJointPosition(int joint) {
+    if (joint >= NUM_BONES)
+      return GetTipPosition();
+    
+    Vector3 local_position =
+        finger_.Bone((Bone.BoneType)(joint)).PrevJoint.ToUnityScaled(mirror_z_axis_);
+    return controller_.transform.TransformPoint(local_position) + offset_;
+  }
+
+  // Returns a ray from the tip of the finger in the direction it is pointing.
+  public Ray GetRay() {
+    Ray ray = new Ray(GetTipPosition(), GetBoneDirection(NUM_BONES - 1));
+    return ray;
   }
 
   // Returns the center of the given bone on the finger in relation to the controller.
-  protected Vector3 GetBonePosition(int bone_type) {
+  public Vector3 GetBoneCenter(int bone_type) {
     Bone bone = finger_.Bone((Bone.BoneType)(bone_type));
-    Vector3 local_position = 0.5f * (bone.PrevJoint.ToUnityScaled() +
-                                     bone.NextJoint.ToUnityScaled());
-
-    return controller_.transform.TransformPoint(local_position);
+    return controller_.transform.TransformPoint(bone.Center.ToUnityScaled(mirror_z_axis_)) +
+           offset_;
   }
 
   // Returns the direction the given bone is facing on the finger in relation to the controller.
-  protected Vector3 GetBoneDirection(int bone_type) {
-    Vector3 local_direction = finger_.Bone((Bone.BoneType)(bone_type)).Direction.ToUnity();
-    return controller_.transform.TransformDirection(local_direction);
+  public Vector3 GetBoneDirection(int bone_type) {
+    Vector3 direction = GetJointPosition(bone_type + 1) - GetJointPosition(bone_type);
+    return direction.normalized;
   }
 
   // Returns the rotation quaternion of the given bone in relation to the controller.
-  protected Quaternion GetBoneRotation(int bone_type) {
-    Quaternion local_rotation = finger_.Bone((Bone.BoneType)(bone_type)).Basis.Rotation();
+  public Quaternion GetBoneRotation(int bone_type) {
+    Quaternion local_rotation =
+        finger_.Bone((Bone.BoneType)(bone_type)).Basis.Rotation(mirror_z_axis_);
     return controller_.transform.rotation * local_rotation;
   }
 }

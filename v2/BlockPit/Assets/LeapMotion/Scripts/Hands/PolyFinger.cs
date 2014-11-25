@@ -20,13 +20,13 @@ public class PolyFinger : FingerModel {
   public float startingAngle = 0.0f;
   public float[] widths = new float[NUM_JOINTS];
   
-  private Vector3[] vertices_;
-  private Vector3[] normals_;
-  private Vector3[] joint_vertices_;
+  protected Vector3[] vertices_;
+  protected Vector3[] normals_;
+  protected Vector3[] joint_vertices_;
 
-  private Mesh mesh_;
-  private Mesh cap_mesh_;
-  private Vector3[] cap_vertices_;
+  protected Mesh mesh_;
+  protected Mesh cap_mesh_;
+  protected Vector3[] cap_vertices_;
 
   public override void InitFinger() {
     InitJointVertices();
@@ -40,6 +40,12 @@ public class PolyFinger : FingerModel {
   public override void UpdateFinger() {
     UpdateMesh();
     UpdateCapMesh();
+  }
+
+  void OnDestroy() {
+    Destroy(mesh_);
+    Destroy(cap_mesh_);
+    Destroy(GetComponent<MeshFilter>().mesh);
   }
 
   void Update() {
@@ -133,6 +139,7 @@ public class PolyFinger : FingerModel {
 
   protected void InitMesh() {
     mesh_ = new Mesh();
+    mesh_.MarkDynamic();
 
     int vertex_index = 0;
     int num_vertices = VERTICES_PER_QUAD * sides * NUM_BONES;
@@ -174,6 +181,7 @@ public class PolyFinger : FingerModel {
 
   protected void InitCapsMesh() {
     cap_mesh_ = new Mesh();
+    cap_mesh_.MarkDynamic();
 
     cap_vertices_ = cap_mesh_.vertices;
     int num_vertices = 2 * sides;
