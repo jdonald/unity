@@ -14,12 +14,9 @@ public class SkeletalHand : HandModel {
   protected const float PALM_CENTER_OFFSET = 0.0150f;
 
   public GameObject palm;
-  public GameObject forearm;
-  public GameObject wristJoint;
 
   void Start() {
-    // Ignore collisions with self.
-    Leap.Utils.IgnoreCollisions(gameObject, gameObject);
+    IgnoreCollisionsWithSelf();
   }
 
   public override void InitHand() {
@@ -35,7 +32,7 @@ public class SkeletalHand : HandModel {
     return GetPalmPosition() - offset;
   }
 
-  protected void SetPositions() {
+  private void SetPositions() {
     for (int f = 0; f < fingers.Length; ++f) {
       if (fingers[f] != null)
         fingers[f].InitFinger();
@@ -44,16 +41,6 @@ public class SkeletalHand : HandModel {
     if (palm != null) {
       palm.transform.position = GetPalmCenter();
       palm.transform.rotation = GetPalmRotation();
-    }
-
-    if (wristJoint != null) {
-      wristJoint.transform.position = GetWristPosition();
-      wristJoint.transform.rotation = GetPalmRotation();
-    }
-
-    if (forearm != null) {
-      forearm.transform.position = GetArmCenter();
-      forearm.transform.rotation = GetArmRotation();
     }
   }
 }

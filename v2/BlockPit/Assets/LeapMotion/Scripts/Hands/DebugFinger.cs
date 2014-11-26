@@ -11,7 +11,7 @@ using Leap;
 // The finger model for our debugging. Draws debug lines for each bone.
 public class DebugFinger : FingerModel {
 
-  protected Color[] colors = {Color.yellow, Color.green, Color.cyan, Color.blue};
+  private Color[] colors = {Color.yellow, Color.green, Color.cyan, Color.blue};
 
   public override void InitFinger() {
     DrawDebugLines();
@@ -21,7 +21,7 @@ public class DebugFinger : FingerModel {
     DrawDebugLines();
   }
 
-  protected void DrawDebugLines() {
+  private void DrawDebugLines() {
     for (int i = 0; i < NUM_BONES; ++i)
       Debug.DrawLine(GetJointPosition(i), GetJointPosition(i + 1), colors[i]);
   }

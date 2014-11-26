@@ -1,0 +1,5 @@
++++ Windows Plugin Structure
+
+x86_x64/OculusPlugin.dll
+d3d9.dll
+OculusPlugin.dll	// x86 plugin

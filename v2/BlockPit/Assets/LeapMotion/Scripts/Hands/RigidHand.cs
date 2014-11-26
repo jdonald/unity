@@ -15,7 +15,7 @@ public class RigidHand : SkeletalHand {
 
   void Start() {
     palm.GetComponent<Rigidbody>().maxAngularVelocity = Mathf.Infinity;
-    Leap.Utils.IgnoreCollisions(gameObject, gameObject);
+    IgnoreCollisionsWithSelf();
   }
 
   public override void InitHand() {
@@ -46,10 +46,8 @@ public class RigidHand : SkeletalHand {
         angle = 360 - angle;
         axis = -axis;
       }
-      if (angle != 0) {
-        float delta_radians = (1 - filtering) * angle * Mathf.Deg2Rad;
-        palm.GetComponent<Rigidbody>().angularVelocity = delta_radians * axis / Time.deltaTime;
-      }
+      if (angle != 0)
+        palm.GetComponent<Rigidbody>().angularVelocity = (1 - filtering) * angle * axis;
     }
   }
 }
