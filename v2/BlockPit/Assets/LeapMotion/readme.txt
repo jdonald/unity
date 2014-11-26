@@ -1,12 +1,12 @@
 Leap Motion Skeletal Assets (beta)
 
-These assets go along with our V2 Skeletal Tracking Beta. There are 3
+These assets go along with our V2 Skeletal Tracking Beta. There are multiple
 customizable hands, a physical "RigidHand" and some useful gestures that
 interact with the physics engine like magnetic pinching.
 
 Before you begin:
   You first need Leap Motion Skeletal V2 Tracking installed from:
-  https://developer.leapmotion.com/v2
+  https://developer.leapmotion.com/
 
 Getting Started:
   You can make the simplest "Hello Hands" scene by dropping the
@@ -23,10 +23,10 @@ Getting Started:
 
 Physics and the RigidHand prefab:
   Our current physics model is a Box Collider for each bone and palm. This
-  is great for patting and touching and hitting things but at the moment it's
-  hard to grab objects. We've made magnetic pinching as a first solution, but
-  it doesn't work that well for medium to large objects. This is in development
-  and we'll have new Physics models in the future.
+  is great for patting, touching, flicking, and scooping objects. If you want
+  to grab objects you can use some of the resources in the Demos or the
+  Interaction Utilities (see below) which give you one handed and two handed
+  grabs.
 
 Customizing Hands:
   There are two HandModel fields in the HandController prefab
@@ -42,6 +42,17 @@ Customizing Hands:
   put objects into any of the bones on the fingers or in the palm and they'll
   become part of the hand. Keep in mind that you shouldn't have Colliders in
   the Hand Graphics Model because it doesn't get updated on the Physics loop.
+
+Tools:
+  If you want to use tools, you can drop a ToolModel object into the
+  HandController's ToolModel parameter. There are currently two tools shipped
+  with these assets: a flash light and a low fidelity spatula but there will
+  be more in the future. Please send in any requests.
+
+Interaction Utilities:
+  We are developing a more complex system to manipulate objects. It is
+  currently in an alpha state so may be unstable and may not be comptabile
+  with current features.
 
 Head Mounted Displays:
   If you want to track your hands from a head mounted display, you can place

@@ -8,32 +8,35 @@ using UnityEngine;
 using System.Collections;
 using Leap;
 
+// Class to setup a rigged hand based on a model.
 public class RiggedHand : HandModel {
+
+  public Transform palm;
+  public Transform foreArm;
+
+  public Vector3 modelFingerPointing = Vector3.forward;
+  public Vector3 modelPalmFacing = -Vector3.up;
 
   public override void InitHand() {
     UpdateHand();
   }
 
+  public Quaternion Reorientation() {
+    return Quaternion.Inverse(Quaternion.LookRotation(modelFingerPointing, -modelPalmFacing));
+  }
+
   public override void UpdateHand() {
-    Transform arm = GetArm();
-    arm.position = GetPalmPosition();
-    arm.rotation = GetPalmRotation();
+    if (palm != null) {
+      palm.position = GetPalmPosition();
+      palm.rotation = GetPalmRotation() * Reorientation();
+    }
+
+    if (foreArm != null)
+      foreArm.rotation = GetArmRotation() * Reorientation();
 
     for (int i = 0; i < fingers.Length; ++i) {
       if (fingers[i] != null)
         fingers[i].UpdateFinger();
     }
-  }
-
-  Transform GetArm() {
-    return transform.Find("Root").Find("Arm");
-  }
-
-  protected Vector3 GetPalmPosition() {
-    return GetController().transform.TransformPoint(GetLeapHand().PalmPosition.ToUnityScaled());
-  }
-
-  protected Quaternion GetPalmRotation() {
-    return GetController().transform.rotation * GetLeapHand().Basis.Rotation();
   }
 }

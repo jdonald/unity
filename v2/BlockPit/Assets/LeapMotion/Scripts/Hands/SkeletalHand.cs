@@ -11,12 +11,15 @@ using Leap;
 // The model for our skeletal hand made out of various polyhedra.
 public class SkeletalHand : HandModel {
 
-  protected const float PALM_CENTER_OFFSET = 15.0f;
+  protected const float PALM_CENTER_OFFSET = 0.0150f;
 
   public GameObject palm;
+  public GameObject forearm;
+  public GameObject wristJoint;
 
   void Start() {
-    IgnoreCollisionsWithSelf();
+    // Ignore collisions with self.
+    Leap.Utils.IgnoreCollisions(gameObject, gameObject);
   }
 
   public override void InitHand() {
@@ -28,19 +31,11 @@ public class SkeletalHand : HandModel {
   }
 
   protected Vector3 GetPalmCenter() {
-    Hand leap_hand = GetLeapHand();
-    Vector3 offset = leap_hand.Direction.ToUnityScaled() * PALM_CENTER_OFFSET;
-    Vector3 local_center = leap_hand.PalmPosition.ToUnityScaled() - offset;
-
-    return GetController().transform.TransformPoint(local_center);
+    Vector3 offset = PALM_CENTER_OFFSET * Vector3.Scale(GetPalmDirection(), transform.localScale);
+    return GetPalmPosition() - offset;
   }
 
-  protected Quaternion GetPalmRotation() {
-    return GetController().transform.rotation *
-           GetLeapHand().Basis.Rotation();
-  }
-
-  private void SetPositions() {
+  protected void SetPositions() {
     for (int f = 0; f < fingers.Length; ++f) {
       if (fingers[f] != null)
         fingers[f].InitFinger();
@@ -50,5 +45,17 @@ public class SkeletalHand : HandModel {
       palm.transform.position = GetPalmCenter();
       palm.transform.rotation = GetPalmRotation();
     }
+
+    if (wristJoint != null) {
+      wristJoint.transform.position = GetWristPosition();
+      wristJoint.transform.rotation = GetPalmRotation();
+    }
+
+    if (forearm != null) {
+      forearm.transform.position = GetArmCenter();
+      forearm.transform.rotation = GetArmRotation();
+    }
   }
 }
+
+
